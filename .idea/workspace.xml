@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3c0b8f2-d7ad-4b51-a3fa-b09cee7dbb0d" name="Changes" comment="chore">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="d3c0b8f2-d7ad-4b51-a3fa-b09cee7dbb0d" name="Changes" comment="Fix print binary tree">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/view/PlotTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/view/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/service/PrintService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/service/PrintService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663264689356</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fix print binary tree">
+      <created>1663268750256</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1663268750256</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,7 +114,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Trying to draw graph - point approach" />
     <MESSAGE value="chore" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore" />
+    <MESSAGE value="Fix print binary tree" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix print binary tree" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

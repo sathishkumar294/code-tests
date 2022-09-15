@@ -2,10 +2,8 @@ package com.sathish.codes.leftview.service;
 
 import com.sathish.codes.leftview.model.Node;
 import com.sathish.codes.leftview.model.Tree;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import com.sathish.codes.leftview.view.PlotTree;
+import com.sathish.codes.leftview.view.Point;
 
 import java.util.*;
 
@@ -53,66 +51,5 @@ public class PrintService {
         });
     }
 
-
-    @Data
-    static
-    class PlotTree {
-        List<Point> points = new ArrayList<>();
-
-        public void addNode(Node node, int lineNo) {
-            var point = points.stream().filter(p -> p.getNode().getId().equals(node.getId())).findFirst();
-            if (point.isEmpty()) {
-                int maxX = points.stream().filter(p -> p.getY() == lineNo).map(Point::getX).reduce(Math::max).orElse(0);
-                Point parentPoint = getPointForNode(node.getParentNode());
-                Point leftPoint = getPointForNode(node.getLeftNode());
-                Point rightPoint = getPointForNode(node.getRightNode());
-                Point pt = new Point((maxX > 0 ? maxX + 2 : 1), lineNo, node, parentPoint, leftPoint, rightPoint);
-                points.add(pt);
-                if (parentPoint != null) {
-                    adjustParentPosition(parentPoint);
-                }
-            }
-        }
-
-        void adjustParentPosition(Point parentPoint) {
-            if (parentPoint != null) {
-                Point leftPoint = getPointForNode(parentPoint.getNode().getLeftNode());
-                Point rightPoint = getPointForNode(parentPoint.getNode().getRightNode());
-                int newX = 0;
-                if (leftPoint.getX() != 0 && rightPoint.getX() == 0) {
-                    newX = rightPoint.getX();
-                } else if (leftPoint.getX() == 0 && rightPoint.getX() != 0) {
-                    newX = rightPoint.getX();
-                } else {
-                    newX = (leftPoint.getX() + rightPoint.getX()) / 2;
-                }
-                parentPoint.setX(newX);
-                adjustParentPosition(parentPoint.getParentPoint());
-            }
-        }
-
-        private Point getPointForNode(Node node) {
-            if (node == null) return null;
-            return this.points.stream().filter(point -> point.getNode().getId().equals(node.getId())).findFirst().orElse(new Point(0, 0, node));
-        }
-    }
-
-    @Data
-    @AllArgsConstructor
-    @RequiredArgsConstructor
-    static
-    class Point {
-        @NonNull
-        private int x;
-        @NonNull
-        private int y;
-        @NonNull
-        private Node node;
-
-        private Point parentPoint;
-
-        private Point leftChildPoint;
-        private Point rightChildPoint;
-    }
 
 }
