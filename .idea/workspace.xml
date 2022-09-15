@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3c0b8f2-d7ad-4b51-a3fa-b09cee7dbb0d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sathish/codes/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/LeftViewOfBinaryTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/model/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/model/Tree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/service/PrintService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/service/TreeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/service/PrintService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/service/PrintService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/service/TreeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/service/TreeService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,13 +41,18 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
 }]]></component>
   <component name="RunManager">
     <configuration name="LeftViewOfBinaryTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/Documents/jdk-18.0.2.1" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.sathish.codes.leftview.LeftViewOfBinaryTree" />
-      <module name="Code tests" />
+      <module name="code-tests" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.sathish.codes.leftview.*" />
@@ -93,6 +90,18 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <condition expression="node.getValue().equals(&quot;10&quot;)" language="JAVA" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/service/PrintService.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

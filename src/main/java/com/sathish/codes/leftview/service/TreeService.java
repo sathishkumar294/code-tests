@@ -23,19 +23,20 @@ public class TreeService {
         Node n7 = new Node("7");
         Node n8 = new Node("8");
         Node n9 = new Node("9");
-        Node n10 = new Node("10");
-        Node n11 = new Node("11");
-        Node n12 = new Node("12");
-        Node n13 = new Node("13");
-        Node n14 = new Node("14");
+        Node n10 = new Node("0");
+        Node n11 = new Node("1");
+        Node n12 = new Node("2");
+        Node n13 = new Node("3");
+        Node n14 = new Node("4");
+        Node n15 = new Node("5");
 
         n1.setNodes(n2, n3);
         n2.setNodes(n4, n5);
         n3.setNodes(n6, n7);
         n4.setNodes(n8, n9);
-        n5.setNodes(n10, null);
-        n6.setNodes(n11, n12);
-        n7.setNodes(n13, n14);
+        n5.setNodes(n10, n11);
+        n6.setNodes(n12, n13);
+        n7.setNodes(n14, n15);
 
         return new Tree(n1);
     }
