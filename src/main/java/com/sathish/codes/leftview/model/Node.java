@@ -2,6 +2,7 @@ package com.sathish.codes.leftview.model;
 
 import lombok.*;
 
+import java.util.Objects;
 import java.util.UUID;
 
 /**
@@ -30,4 +31,16 @@ public class Node {
         if (rightNode != null) rightNode.setParentNode(this);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Node node = (Node) o;
+        return id.equals(node.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

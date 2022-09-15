@@ -9,11 +9,13 @@ import java.util.*;
 
 public class PrintService {
 
-    public PrintService() {
+    public PrintService(boolean printCoordinatesOnly) {
         plotTree = new PlotTree();
+        this.printCoordinatesOnly = printCoordinatesOnly;
     }
 
     private final PlotTree plotTree;
+    private boolean printCoordinatesOnly = false;
 
     public void printTree(Tree tree) {
         Node startNode = tree.getStartNode();
@@ -44,9 +46,12 @@ public class PrintService {
             for (int i = 0; i < gPoints.size(); i++) {
                 Point point = gPoints.get(i);
                 Point prevPoint = i > 0 ? gPoints.get(i - 1) : null;
-                int spaceToLeave = prevPoint != null ? point.getX() - prevPoint.getX() : point.getX();
-//                System.out.println(point.node.getValue() + " :(" + point.x + ", " + point.y + ")");
-                System.out.printf("%1$" + (spaceToLeave > 0 ? spaceToLeave : "") + "s", point.getNode().getValue());
+                if (printCoordinatesOnly) {
+                    System.out.println(point.getNode().getValue() + " :(" + point.getX() + ", " + point.getY() + ")");
+                } else {
+                    int spaceToLeave = prevPoint != null ? point.getX() - prevPoint.getX() : point.getX();
+                    System.out.printf("%1$" + (spaceToLeave > 0 ? spaceToLeave : "") + "s", point.getNode().getValue());
+                }
             }
         });
     }

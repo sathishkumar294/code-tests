@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3c0b8f2-d7ad-4b51-a3fa-b09cee7dbb0d" name="Changes" comment="Fix print binary tree">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/view/PlotTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/view/Point.java" afterDir="false" />
+    <list default="true" id="d3c0b8f2-d7ad-4b51-a3fa-b09cee7dbb0d" name="Changes" comment="refactor">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/model/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/model/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/service/PrintService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/service/PrintService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/service/TreeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/service/TreeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/view/PlotTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/view/PlotTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/view/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sathish/codes/leftview/view/Point.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663268750256</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="refactor">
+      <created>1663269305574</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663269305574</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -115,7 +125,8 @@
     <MESSAGE value="Trying to draw graph - point approach" />
     <MESSAGE value="chore" />
     <MESSAGE value="Fix print binary tree" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix print binary tree" />
+    <MESSAGE value="refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

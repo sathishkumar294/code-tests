@@ -9,7 +9,7 @@ public class LeftViewOfBinaryTree {
     public static void main(String[] args) {
 
         TreeService treeService = TreeService.getInstance();
-        PrintService printService = new PrintService();
+        PrintService printService = new PrintService(false);
         Tree sampleTree = treeService.getSampleTree();
         printService.printTree(sampleTree);
 

@@ -28,15 +28,14 @@ public class TreeService {
         Node n12 = new Node("2");
         Node n13 = new Node("3");
         Node n14 = new Node("4");
-        Node n15 = new Node("5");
 
         n1.setNodes(n2, n3);
         n2.setNodes(n4, n5);
         n3.setNodes(n6, n7);
         n4.setNodes(n8, n9);
-        n5.setNodes(n10, n11);
-        n6.setNodes(n12, n13);
-        n7.setNodes(n14, n15);
+        n5.setNodes(n10, null);
+        n6.setNodes(n11, n12);
+        n7.setNodes(n13, n14);
 
         return new Tree(n1);
     }

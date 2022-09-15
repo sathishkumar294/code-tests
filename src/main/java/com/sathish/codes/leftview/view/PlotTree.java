@@ -1,11 +1,11 @@
 package com.sathish.codes.leftview.view;
 
 import com.sathish.codes.leftview.model.Node;
-import com.sathish.codes.leftview.service.PrintService;
 import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 public class PlotTree {
@@ -16,38 +16,42 @@ public class PlotTree {
         var point = points.stream().filter(p -> p.getNode().getId().equals(node.getId())).findFirst();
         if (point.isEmpty()) {
             int maxX = points.stream().filter(p -> p.getY() == lineNo).map(Point::getX).reduce(Math::max).orElse(0);
-            Point parentPoint = getPointForNode(node.getParentNode());
-            Point leftPoint = getPointForNode(node.getLeftNode());
-            Point rightPoint = getPointForNode(node.getRightNode());
             // If a point already exists on the line, leave a space and add this point. else add it at the start.
             int newX = (maxX > 0 ? maxX + SPACE_TO_ADD : 1);
-            Point pt = new Point(newX, lineNo, node, parentPoint, leftPoint, rightPoint);
+            Point pt = new Point(newX, lineNo, node);
             points.add(pt);
-            if (parentPoint != null) {
-                adjustParentPosition(parentPoint);
-            }
+            adjustParentPositions(lineNo);
         }
     }
 
-    void adjustParentPosition(Point parentPoint) {
-        if (parentPoint != null) {
-            Point leftPoint = getPointForNode(parentPoint.getNode().getLeftNode());
-            Point rightPoint = getPointForNode(parentPoint.getNode().getRightNode());
-            int newX = 0;
-            if (leftPoint.getX() != 0 && rightPoint.getX() == 0) {
-                newX = rightPoint.getX();
-            } else if (leftPoint.getX() == 0 && rightPoint.getX() != 0) {
-                newX = rightPoint.getX();
+    void adjustParentPositions(int lineNo) {
+        if (lineNo <= 0) return;
+        // TODO: Sort the elements by parent id
+        List<Point> pointsOnLine = points.stream().filter(p -> p.getY() == lineNo).collect(Collectors.toList());
+        for (int i = 0; i < pointsOnLine.size(); i++) {
+            Point p1 = pointsOnLine.get(i);
+            Point p2 = pointsOnLine.stream().filter(p -> p.getNode().getParentNode() != null && p.getNode().getParentNode().equals(p1.getNode().getParentNode())).findFirst().orElse(null);
+            int parentX = 1;
+            if (p2 != null && p2.getX() != 0) {
+                parentX = (p1.getX() + p2.getX()) / 2;
             } else {
-                newX = (leftPoint.getX() + rightPoint.getX()) / 2;
+                parentX = p1.getX();
             }
-            parentPoint.setX(newX);
-            adjustParentPosition(parentPoint.getParentPoint());
+            Point parentPoint = findPointForNode(p1.getNode().getParentNode());
+            if (parentPoint != null) {
+                parentPoint.setX(parentX);
+            }
         }
+        adjustParentPositions(lineNo - 1);
     }
 
     private Point getPointForNode(Node node) {
         if (node == null) return null;
         return this.points.stream().filter(point -> point.getNode().getId().equals(node.getId())).findFirst().orElse(new Point(0, 0, node));
+    }
+
+    private Point findPointForNode(Node node) {
+        if (node == null) return null;
+        return this.points.stream().filter(point -> point.getNode().getId().equals(node.getId())).findFirst().orElse(null);
     }
 }
